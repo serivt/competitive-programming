@@ -26,6 +26,10 @@ using namespace std;
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
 
+auto summation(long n) {
+    return (n * (n + 1)) / 2;
+}
+
 int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);

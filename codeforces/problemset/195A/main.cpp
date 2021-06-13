@@ -30,5 +30,11 @@ int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    // Code
+    long a, b, c;
+    cin >> a >> b >> c;
+    long double max = a * c;
+    sfor(i, c) {
+        max -= b;
+    }
+    cout << ceil(max / b) << endl;
 }

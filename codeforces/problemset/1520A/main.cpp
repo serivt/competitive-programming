@@ -30,5 +30,31 @@ int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    // Code
+    int t;
+    cin >> t;
+    sfor(i, t) {
+        int n;
+        cin >> n;
+        char s[n];
+        int counter[26];
+        clr(counter);
+        sfor(j, n) cin >> s[j];
+        char previous = s[0];
+        bool suspicious = false;
+        forin(j, 1, n, 1) {
+            if (s[j] != previous) {
+                int index = previous - 'A';
+                if (counter[index] > 0) {
+                    suspicious = true;
+                    break;
+                }
+                counter[index]++;
+                previous = s[j];
+            }
+        }
+        if (counter[s[n - 1] - 'A'] > 0) {
+            suspicious = true;
+        }
+        cout << (suspicious ? "NO" : "YES") << endln;
+    }
 }

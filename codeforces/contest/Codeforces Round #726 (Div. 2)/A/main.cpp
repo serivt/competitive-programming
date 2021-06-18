@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 
@@ -32,5 +33,21 @@ int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    // Code
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        int a[n];
+        int s = 0;
+        sfor(i, n) {
+            cin >> a[i];
+            s += a[i];
+        }
+        if (s / n < 1) {
+            cout << "1" << endln;
+        } else {
+            cout << ((int)(s - n)) << endln;
+        }
+    }
 }

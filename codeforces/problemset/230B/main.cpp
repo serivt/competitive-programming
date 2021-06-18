@@ -19,8 +19,6 @@ using namespace std;
 #define clr(x) memset(x, 0, sizeof(x))
 #define endln "\n"
 #define pb push_back
-#define ll long long
-#define ul unsigned long
 
 /* Constants */
 #define INF (int)1e9
@@ -32,5 +30,17 @@ int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    // Code
+    int n;
+    cin >> n;
+    sfor(i, n) {
+        long long x;
+        cin >> x;
+        long long max = sqrt(x);
+        long long j = 2;
+        for(; j * j <= max; j++) {
+            if (x % j == 0) break;
+        }
+        cout << ((j*j>max && max*max==x && x>1) ? "YES" : "NO") << endln;
+    }
 }
+

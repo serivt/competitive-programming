@@ -20,7 +20,6 @@ using namespace std;
 #define endln "\n"
 #define pb push_back
 #define ll long long
-#define ul unsigned long
 
 /* Constants */
 #define INF (int)1e9
@@ -32,5 +31,13 @@ int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    // Code
+    int t;
+    cin >> t;
+    while(t--) {
+        ll n, m;
+        cin >> n >> m;
+        ll ans = m + ((m - 1) / (n - 1));
+        cout << ans << endln;
+    }
 }
+

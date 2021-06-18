@@ -19,8 +19,6 @@ using namespace std;
 #define clr(x) memset(x, 0, sizeof(x))
 #define endln "\n"
 #define pb push_back
-#define ll long long
-#define ul unsigned long
 
 /* Constants */
 #define INF (int)1e9
@@ -32,5 +30,17 @@ int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    // Code
+    int n;
+    cin >> n;
+    int x[n];
+    sfor(i, n) cin >> x[i];
+    sort(x, x + n);
+    int q;
+    cin >> q;
+    sfor(i, q) {
+        long m;
+        cin >> m;
+        auto y = upper_bound(x, x + n, m) - x;
+        cout << y << endln; 
+    }
 }

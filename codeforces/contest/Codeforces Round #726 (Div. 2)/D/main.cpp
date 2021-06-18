@@ -32,5 +32,29 @@ int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    // Code
+    int t;
+    cin >> t;
+    while (t--) {
+        ll n;
+        cin >> n;
+        if(n & 1){
+            cout << "Bob" << endln;
+        }
+        else{
+            int counter = 0;
+            while(n % 2 == 0){
+                n /= 2;
+                counter++;
+            }
+            if(n > 1){
+                cout << "Alice" << endl;
+            }
+            else if(counter % 2 != 0){
+                cout << "Bob" << endl;
+            }
+            else{
+                cout << "Alice" << endl;
+            }
+        }
+    }
 }

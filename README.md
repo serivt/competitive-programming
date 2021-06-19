@@ -17,7 +17,7 @@ My solutions to programming contest problems from different sources.
 Commands for testing code.
 ### C++:
 ```bash
-kotlinc main.kt -include-runtime -d main.jar && java -jar main.jar < sample_input1.txt
+g++ main.cpp && ./a.out < sample_input1.txt
 ```
 ### Python 3:
 ```bash

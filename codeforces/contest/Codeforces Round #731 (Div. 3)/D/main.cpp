@@ -20,23 +20,19 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    int k, n, m, i = 0, j = 0;
-    cin >> k >> n >> m;
-    int a[n], b[m], c[n + m];
-    fr(i, n) cin >> a[i];
-    fr(i, m) cin >> b[i];
-    fr(z, n + m) {
-        if (i < n && a[i] && a[i] <= k) c[z] = a[i++];
-        else if (j < m && b[j] && b[j] <= k) c[z] = b[j++];
-        else if (i < n && a[i] == 0) c[z] = 0, k++, i++;
-        else if (j < m && b[j] == 0) c[z] = 0, k++, j++;
+    int n, x = 0, y, z;
+    cin >> n;
+    fr(i, n) {
+        cin >> y;
+        z = x&(~y);
+        cout << z << " ";
+        x = y^z;
     }
-    if (i == n && j == m) fr(i, n + m) cout << c[i] << " ";
-    else cout << -1;
     cout << endln;
 }
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
     int t;

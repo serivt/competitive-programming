@@ -24,8 +24,25 @@ using namespace std;
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
 
+
 void solve() {
-    // Code here
+    int n, l = -1, r, d;
+    cin >> n;
+    int a[n];
+    vector<string> ans;
+    fr(i, n) cin >> a[i];
+    fr(i, n - 1) {
+        if (a[i] >= a[n - 1]) {
+            if (l == -1) l = i, d = 1;
+            else d++;
+        } else if (l != -1) {
+            ans.pb("test");
+        }
+    }
+    cout << ans.size() << endln;
+    foreach(it, ans) {
+        cout << it << endln;
+    }
 }
 
 int main(int argc, char const *argv[])

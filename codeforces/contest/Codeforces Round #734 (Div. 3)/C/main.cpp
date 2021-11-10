@@ -25,7 +25,28 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    int n, k;
+    cin >> n >> k;
+    int a[n], b[n];
+    clr(b);
+    vector<queue<int>> q(n + 1);
+    fr(i, n) {
+        cin >> a[i];
+        q[a[i]].push(i);
+    }
+    int m = 0, l = 0, x = 0, c = q.size() / k * k;
+    fr(i, q.size()) {
+        l = min((int)q[i].size(), k);
+        fr(j, l) {
+            b[q[i].front()] = x++ % k + 1;
+            q[i].pop();
+            if (x == c) break;
+        }
+        if (x >= c) break;
+        while(!q[i].empty()) q[i].pop();
+    }
+    fr(i, n) cout << b[i] << " ";
+    cout << endln;
 }
 
 int main(int argc, char const *argv[])

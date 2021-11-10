@@ -25,7 +25,20 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    int n;
+    cin >> n;
+    for (int i=3;i<n;i++) {
+        if (n % 2 == n % i) {
+            cout << "2 " << i << endln;
+            break;
+        } else if (i > 3 && n % 3 == n % i) {
+            cout << "3 " << i << endln;
+            break;
+        }  else if (i > 5 && n % 5 == n % i) {
+            cout << "5 " << i << endln;
+            break;
+        } 
+    }
 }
 
 int main(int argc, char const *argv[])

@@ -5,7 +5,7 @@
 ## Problems
 
 * [A. Anton and Danik](https://codeforces.com/contest/734/problem/A) [Accepted]
-* [B. Anton and Digits](https://codeforces.com/contest/734/problem/B)
+* [B. Anton and Digits](https://codeforces.com/contest/734/problem/B) [Accepted]
 * [C. Anton and Making Potions](https://codeforces.com/contest/734/problem/C)
 * [D. Anton and Chess](https://codeforces.com/contest/734/problem/D)
 * [E. Anton and Tree](https://codeforces.com/contest/734/problem/E)

@@ -25,14 +25,24 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    int n, m;
+    ll ans = 0, x = 0;
+    cin >> n >> m;
+    ll arr[n+1] = {};
+    cout << n;
+    fr(i, m) {
+        int a, b, v;
+        cin >> a >> b >> v;
+        arr[a] += v;
+        if (b+1<=n) arr[b+1] -= v;
+    }
+    for(int i=1;i<=n;i++) x += arr[i], ans = max(ans, x);
+    cout << ans << endln;
 }
 
 int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    int t;
-    cin >> t;
-    while (t--) solve();
+    solve();
 }

@@ -25,7 +25,21 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    int n, i;
+    cin >> n;
+    int a[n];
+    fr(i, n) cin >> a[i];
+    if (a[0] != a[1] && a[1] == a[2]) {
+        cout << 1 << endln;
+        return;
+    }
+    for(i=1; i<n-1; i++) {
+        if (a[i - 1] != a[i] && a[i - 1] == a[i + 1]) {
+            cout << (i + 1) << endln;
+            return;
+        }
+    }
+    cout << n << endln;
 }
 
 int main(int argc, char const *argv[])

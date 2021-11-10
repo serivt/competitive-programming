@@ -25,7 +25,11 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    string s;
+    cin >> s;
+    int c[] = {0, 0, 0};
+    fr(i, s.length()) c[s[i] - 65]++;
+    cout << (c[0] + c[2] == c[1] ? "YES" : "NO") << endln;
 }
 
 int main(int argc, char const *argv[])

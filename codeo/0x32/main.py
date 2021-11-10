@@ -7,13 +7,13 @@ if len(x) < len(y):
 x.reverse()
 
 k = 0
-for i in range(0, len(x)):
+for i in range(len(x)):
     if y:
         k += y.pop()
     v = x[i] + k
     x[i] = str(v % 10)
     k = v // 10
-    
+
 x.reverse()
 
 if k > 0:

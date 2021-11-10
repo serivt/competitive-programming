@@ -25,14 +25,30 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    string s, t;
+    cin >> s >> t;
+    int i = 0, j = 0;
+    while (i < s.length()) {
+        j = 0;
+        while (i < s.length() && s[i] != t[0]) i++;
+        int k = i;
+        while (k < s.length() && j < t.length() && s[k] == t[j]) k++, j++;
+        k--, j--;
+        while (k >= 0 && j < t.length() && s[k] == t[j]) k--, j++;
+        if (j == t.length()) {
+            cout << "YES" << endln;
+            break;
+        }
+        i++;
+    }
+    if (j != t.length()) cout << "NO" << endln;
 }
 
 int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    int t;
+    int t; 
     cin >> t;
     while (t--) solve();
 }

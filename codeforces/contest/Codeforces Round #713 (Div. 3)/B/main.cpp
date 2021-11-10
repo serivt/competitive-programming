@@ -25,7 +25,32 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    int n;
+    cin >> n;
+    char m[n][n];
+    pair<int, int> p1(-1, -1);
+    pair<int, int> p2(-1, -1);
+    fr(i, n) {
+        fr(j, n) {
+            cin >> m[i][j];
+            if (m[i][j] == '*' && p1.first == -1) p1 = make_pair(i, j);
+            else if (m[i][j] == '*' && p2.first == -1) p2 = make_pair(i, j);
+        }
+    }
+    if (p1.first == p2.first) {
+        m[(p1.first + 1) % n][p1.second] = '*';
+        m[(p1.first + 1) % n][p2.second] = '*';
+    } else if (p1.second == p2.second) {
+        m[p1.first][(p1.second + 1) % n] = '*';
+        m[p2.first][(p2.second + 1) % n] = '*';
+    } else {
+        m[p1.first][p2.second] = '*';
+        m[p2.first][p1.second] = '*';
+    }
+    fr(i, n) {
+        fr(j, n) cout << m[i][j];
+        cout << endln;
+    }
 }
 
 int main(int argc, char const *argv[])

@@ -25,7 +25,41 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    int n;
+    cin >> n;
+    map<char, int> v[n], g;
+    string s[n];
+    char m;
+    int mc = 0, t = 0;
+    fr(i, n) {
+        cin >> s[i];
+        fr(j, s[i].length()) {
+            v[i][s[i][j]]++;
+            v[i]['&']++;
+            g[s[i][j]]++;
+            if (g[s[i][j]] > mc) {
+                mc = g[s[i][j]];
+                m = s[i][j];
+            }
+            t++;
+        }
+    }
+    int mr = g[m], ot = t - mr;
+    vector<pair<int, int>> p;
+    fr(i, n) {
+        if (v[i][m] == 0 && mr <= ot) {
+            ot -= v[i]['&'];
+            n--;
+        }
+        p.pb(make_pair(v[i]['&'] - v[i][m], v[i][m]));
+    }
+    sort(all(p));
+    while (n > 0 && mr <= ot) {
+        ot -= p[n - 1].first;
+        mr -= p[n - 1].second;
+        n--;
+    }
+    cout << n << endln;
 }
 
 int main(int argc, char const *argv[])

@@ -25,7 +25,17 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    string s;
+    cin >> s;
+    int mp[30], ans = 0, lc = 0;
+    clr(mp);
+    fr(i, s.length()) mp[s[i] - 'a']++;
+    fr(i, 30) {
+        if (mp[i] > 1) ans++;
+        if (mp[i] == 1) lc++;
+    }
+    ans += (lc / 2);
+    cout << ans << endln;
 }
 
 int main(int argc, char const *argv[])

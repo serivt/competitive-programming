@@ -24,8 +24,22 @@ using namespace std;
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
 
+
 void solve() {
-    // Code here
+    int n;
+    cin >> n;
+    vector<int> ans;
+    int x, p;
+    cin >> x;
+    p = x;
+    ans.pb(x);
+    for(int i=1; i<n; i++) {
+        cin >> x;
+        if (x <= p) ans.insert(ans.begin(), x),  p = x;
+        else ans.pb(x);
+    }
+    for(int i: ans) cout << i << " ";
+    println();
 }
 
 int main(int argc, char const *argv[])

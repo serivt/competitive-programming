@@ -25,7 +25,9 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    ll n;
+    cin >> n;
+    cout << (ll)((n+1)/10) << endln;
 }
 
 int main(int argc, char const *argv[])

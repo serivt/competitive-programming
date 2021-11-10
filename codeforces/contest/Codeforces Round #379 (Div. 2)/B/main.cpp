@@ -25,14 +25,16 @@ using namespace std;
 #define MOD 1000000007
 
 void solve() {
-    // Code here
+    int k2, k3, k5, k6;
+    cin >> k2 >> k3 >> k5 >> k6;
+    int n256 = min({k2, k5, k6});
+    int n32 = min(k2 - n256, k3);
+    cout << (n32 * 32 + n256 * 256) << endln;
 }
 
 int main(int argc, char const *argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    int t;
-    cin >> t;
-    while (t--) solve();
+    solve();
 }
